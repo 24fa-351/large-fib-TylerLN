@@ -2,7 +2,9 @@
 #include <stdlib.h>
 
 unsigned long long int FibIterative(int n) {
-   if (n == 1) {
+   if (n == 0) {
+      return 0;
+   } else if (n == 1) {
       return 0;
    } else if (n == 2) {
       return 1;
@@ -17,7 +19,9 @@ unsigned long long int FibIterative(int n) {
 }
 
 unsigned long long int FibRecursive(int n) {
-   if(n == 1){
+   if (n==0) {
+      return 0;
+   } else if(n == 1){
       return 0;
    } else if (n == 2) {
       return 1;
