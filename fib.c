@@ -2,9 +2,7 @@
 #include <stdlib.h>
 
 unsigned long long int FibIterative(int n) {
-   if (n == 0) {
-      return 0;
-   } else if (n == 1) {
+   if (n == 1) {
       return 0;
    } else if (n == 2) {
       return 1;
@@ -19,9 +17,7 @@ unsigned long long int FibIterative(int n) {
 }
 
 unsigned long long int FibRecursive(int n) {
-   if (n==0) {
-      return 0;
-   } else if(n == 1){
+   if(n == 1){
       return 0;
    } else if (n == 2) {
       return 1;
@@ -33,12 +29,8 @@ unsigned long long int FibRecursive(int n) {
 
 int main(int argc, char *argv[]) {
    int value = atoi(argv[1]);
-   FILE *text_file = fopen(argv[3], "r");
-   int file_value;
-   fscanf(text_file, "%d", &file_value);
-   fclose(text_file);
 
-   int N = value + file_value;
+   int N = value;
 
    if (argv[2][0] == 'i') {
      unsigned long long int result = FibIterative(N);
