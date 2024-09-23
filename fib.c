@@ -18,9 +18,9 @@ unsigned long long int FibIterative(int n) {
   unsigned long long int second = 1;
   unsigned long long int next_value;
 
-  for (int i = 3; i <= n; i++) {
+  for (int ix = 3; ix <= n; ix++) {
     if (OverFlow(first, second)) {
-      printf("Overflow at %d\n", i);
+      printf("Overflow at %d\n", ix);
       return 0;
     }
     next_value = first + second;
