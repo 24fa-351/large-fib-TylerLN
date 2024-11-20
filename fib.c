@@ -7,10 +7,10 @@ unsigned long long int OverFlow(unsigned long long int current,
   return (current > ULLONG_MAX - next);
 }
 
-unsigned long long int FibIterative(int n) {
-  if (n == 1) {
+unsigned long long int FibIterative(int index) {
+  if (index == 1) {
     return 0;
-  } else if (n == 2) {
+  } else if (index == 2) {
     return 1;
   }
 
@@ -18,7 +18,7 @@ unsigned long long int FibIterative(int n) {
   unsigned long long int second = 1;
   unsigned long long int next_value;
 
-  for (int ix = 3; ix <= n; ix++) {
+  for (int ix = 3; ix <= index; ix++) {
     if (OverFlow(first, second)) {
       printf("Overflow at %d\n", ix);
       return 0;
