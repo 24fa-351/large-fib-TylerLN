@@ -7,10 +7,10 @@ unsigned long long int OverFlow(unsigned long long int current,
   return (current > ULLONG_MAX - next);
 }
 
-unsigned long long int FibIterative(int index) {
-  if (index == 1) {
+unsigned long long int FibIterative(int fib_index) {
+  if (fib_index == 1) {
     return 0;
-  } else if (index == 2) {
+  } else if (fib_index == 2) {
     return 1;
   }
 
@@ -18,7 +18,7 @@ unsigned long long int FibIterative(int index) {
   unsigned long long int second = 1;
   unsigned long long int next_value;
 
-  for (int ix = 3; ix <= index; ix++) {
+  for (int ix = 3; ix <= fib_index; ix++) {
     if (OverFlow(first, second)) {
       printf("Overflow at %d\n", ix);
       return 0;
@@ -30,18 +30,18 @@ unsigned long long int FibIterative(int index) {
   return second;
 }
 
-unsigned long long int FibRecursive(int n) {
-  if (n == 1) {
+unsigned long long int FibRecursive(int recursive_index) {
+  if (recursive_index == 1) {
     return 0;
-  } else if (n == 2) {
+  } else if (recursive_index == 2) {
     return 1;
   }
 
-  unsigned long long int current = FibRecursive(n - 1);
-  unsigned long long int next = FibRecursive(n - 2);
+  unsigned long long int current = FibRecursive(recursive_index - 1);
+  unsigned long long int next = FibRecursive(recursive_index - 2);
 
   if (OverFlow(current, next)) {
-    printf("Overflow occured at index %d\n", n);
+    printf("Overflow occured at index %d\n", recursive_index);
     return 0;
   }
   return current + next;
